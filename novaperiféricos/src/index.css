@@ -1,0 +1,87 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Theme variables */
+:root{
+  --brand-1:  #2d0936; /* teal-200 */
+  --brand-2:  #692bd3; /* purple-600 */
+  --bg:       #0f172a; /* slate-900 */
+  --card:     #0b1220; /* dark card */
+  --muted:    #94a3b8; /* slate-400 */
+}
+
+body { @apply bg-gradient-to-b from-slate-900 via-slate-800 to-slate-700 text-slate-100; font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+
+.header-gradient {
+  background: linear-gradient(90deg, var(--brand-2), var(--brand-1));
+  color: white;
+}
+
+.header-shadow { box-shadow: 0 6px 18px rgba(2,6,23,0.6); }
+
+.card-glass {
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.04);
+  backdrop-filter: blur(6px);
+}
+
+/* INPUTS */
+.input-dark {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #e6eef8;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+}
+.input-dark:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.12);
+  border-color: rgba(124,58,237,0.8);
+}
+
+/* BUTTON STYLES */
+.btn-primary {
+  background: linear-gradient(90deg, var(--brand-2), var(--brand-1));
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+}
+.btn-ghost {
+  background: rgba(255,255,255,0.04);
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(255,255,255,0.04);
+}
+
+/* small */
+.small-muted { color: var(--muted); }
+
+.container {
+  max-width: 1100px;
+}
+
+/* Toast */
+.toast-container {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  z-index: 60;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.toast {
+  position: fixed;
+  top: 70%;
+  left: 43.9%;
+  padding: 10px 14px;
+  border-radius: 8px;
+  min-width: 200px;
+  color: #071022;
+  font-weight: 600;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+.toast-success { background: linear-gradient(90deg,#10b981,#34d399); color: #042018; }
+.toast-error { background: linear-gradient(90deg,#ef4444,#f97316); color: #2b0808; }
